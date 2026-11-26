@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://narbghuildj4"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://narbghuildj4"]
 
 [ext_resource type="StyleBox" uid="uid://b63ka2dp8f2ts" path="res://user_interface/themes_title/new_style_box_flat.tres" id="1_e2x5k"]
+[ext_resource type="FontFile" uid="uid://cf0qktav4g7oi" path="res://assets/fonts/JBLACK.TTF" id="2_y00d1"]
 
 [resource]
+default_font = ExtResource("2_y00d1")
+default_font_size = 47
 PanelContainer/styles/panel = ExtResource("1_e2x5k")
+RichTextLabel/colors/default_color = Color(0.830335, 0.830335, 0.830335, 1)
