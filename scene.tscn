@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd83hpihq2w6g"]
+[gd_scene load_steps=5 format=3 uid="uid://cd83hpihq2w6g"]
 
 [ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://map.jpg" id="1_ulcgi"]
 [ext_resource type="PackedScene" path="res://Player.tscn" id="3_3253y"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nxogm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3253y"]
+size = Vector2(27, 111)
+
 [node name="Scene" type="Node2D"]
+position = Vector2(-27, 85)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -22,4 +28,21 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Player" parent="CanvasLayer/TextureRect" instance=ExtResource("3_3253y")]
-position = Vector2(587, 425)
+position = Vector2(579, 511)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(573, 452)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_nxogm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(198.5, -282.5)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(187, -83)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-192, -83)
+shape = SubResource("RectangleShape2D_3253y")
