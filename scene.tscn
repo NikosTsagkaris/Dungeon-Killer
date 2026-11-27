@@ -1,9 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd83hpihq2w6g"]
+[gd_scene load_steps=10 format=3 uid="uid://cd83hpihq2w6g"]
 
 [ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://map.jpg" id="1_ulcgi"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
+=======
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://cs2700ciuk3i8" path="res://Player.tscn" id="3_3253y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nxogm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3253y"]
+size = Vector2(27, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxogm"]
+size = Vector2(45, 628)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3cyc"]
+size = Vector2(1145, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7jmp"]
+size = Vector2(35, 609.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2354"]
+size = Vector2(321, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni31j"]
+size = Vector2(70, 197)
+=======
+[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
+>>>>>>> 483a60e (Interactive Quit/Play)
+>>>>>>> temp-fix
 
 [node name="Scene" type="Node2D"]
+position = Vector2(-27, 85)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -11,10 +40,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -86.0
-offset_right = 2.0
-offset_bottom = -86.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ulcgi")
@@ -22,4 +51,57 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Player" parent="CanvasLayer/TextureRect" instance=ExtResource("3_3253y")]
-position = Vector2(587, 425)
+position = Vector2(579, 511)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(605, 440)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_nxogm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(198.5, -288.5)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(190, -97)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-191, -98)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-202, -294)
+shape = SubResource("RectangleShape2D_3253y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(556.5, -200)
+shape = SubResource("RectangleShape2D_nxogm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-2.5, 88.5)
+shape = SubResource("RectangleShape2D_u3cyc")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-554.5, -209.25)
+shape = SubResource("RectangleShape2D_m7jmp")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-403, -508)
+shape = SubResource("RectangleShape2D_y2354")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-21, -496)
+shape = SubResource("RectangleShape2D_y2354")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
+position = Vector2(361, -409)
+shape = SubResource("RectangleShape2D_y2354")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-186, -423.5)
+shape = SubResource("RectangleShape2D_ni31j")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
+position = Vector2(177, -426)
+shape = SubResource("RectangleShape2D_ni31j")
