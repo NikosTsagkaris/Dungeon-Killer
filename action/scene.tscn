@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd83hpihq2w6g"]
+[gd_scene load_steps=13 format=3 uid="uid://cd83hpihq2w6g"]
 
-[ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://map.jpg" id="1_ulcgi"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
-=======
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://cs2700ciuk3i8" path="res://Player.tscn" id="3_3253y"]
+[ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://action/map.jpg" id="1_lnj03"]
+[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://action/Player.tscn" id="2_j4bb5"]
+[ext_resource type="Script" uid="uid://brx2rkxwynlhu" path="res://action/SkeletonSpawner.cs" id="3_j4bb5"]
+[ext_resource type="PackedScene" uid="uid://yr8k6tit7wcg" path="res://action/Skeleton.tscn" id="4_t2lmc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nxogm"]
 
@@ -26,17 +24,18 @@ size = Vector2(321, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ni31j"]
 size = Vector2(70, 197)
-=======
-[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
->>>>>>> 483a60e (Interactive Quit/Play)
->>>>>>> temp-fix
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4bb5"]
+bg_color = Color(0.691695, 0.204806, 0.307557, 1)
 
 [node name="Scene" type="Node2D"]
 position = Vector2(-27, 85)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,11 +45,11 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ulcgi")
+texture = ExtResource("1_lnj03")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Player" parent="CanvasLayer/TextureRect" instance=ExtResource("3_3253y")]
+[node name="Player" parent="CanvasLayer/TextureRect" instance=ExtResource("2_j4bb5")]
 position = Vector2(579, 511)
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -105,3 +104,33 @@ shape = SubResource("RectangleShape2D_ni31j")
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
 position = Vector2(177, -426)
 shape = SubResource("RectangleShape2D_ni31j")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 796.0
+offset_top = 16.0
+offset_right = -48.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_j4bb5")
+value = 100.0
+
+[node name="SkeletonSpawner" type="Node2D" parent="."]
+script = ExtResource("3_j4bb5")
+SkeletonScene = ExtResource("4_t2lmc")
+
+[node name="Door1" type="Marker2D" parent="SkeletonSpawner"]
+position = Vector2(222, -53)
+
+[node name="Door2" type="Marker2D" parent="SkeletonSpawner"]
+position = Vector2(605, -40)
+
+[node name="Door3" type="Marker2D" parent="SkeletonSpawner"]
+position = Vector2(967, 52)
+
+[node name="Timer" type="Timer" parent="SkeletonSpawner"]
+wait_time = 1.731
+autostart = true

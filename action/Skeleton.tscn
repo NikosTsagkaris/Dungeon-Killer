@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://yr8k6tit7wcg"]
+
+[ext_resource type="Script" uid="uid://dmlaf172w0kq3" path="res://action/Skeleton.cs" id="1_67nhy"]
+[ext_resource type="Texture2D" uid="uid://7wuthg8wx8cj" path="res://action/skeleton.png" id="1_m5ktq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67nhy"]
+size = Vector2(56, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csrhg"]
+size = Vector2(30, 48)
+
+[node name="Skeleton" type="CharacterBody2D" groups=["enemies"]]
+motion_mode = 1
+script = ExtResource("1_67nhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_m5ktq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_67nhy")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_csrhg")
