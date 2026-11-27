@@ -6,5 +6,8 @@
 [resource]
 default_font = ExtResource("2_y00d1")
 default_font_size = 47
+Button/styles/hover = null
 PanelContainer/styles/panel = ExtResource("1_e2x5k")
 RichTextLabel/colors/default_color = Color(0.830335, 0.830335, 0.830335, 1)
+RichTextLabelTitle/base_type = &"RichTextLabel"
+RichTextLabelTitle/font_sizes/normal_font_size = 110

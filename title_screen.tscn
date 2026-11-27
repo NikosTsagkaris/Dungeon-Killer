@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://b7t2g6vangre5"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bbf8vs4uxf536"]
+>>>>>>> 483a60e (Interactive Quit/Play)
 
 [ext_resource type="Theme" uid="uid://narbghuildj4" path="res://user_interface/themes_title/menu_theme.tres" id="1_ak2if"]
 [ext_resource type="PackedScene" uid="uid://1cfeikkvtrr5" path="res://user_interface/buttons_title/play_button.tscn" id="1_v6p8y"]
+[ext_resource type="Script" uid="uid://diyrdongkjk2a" path="res://user_interface/buttons_title/PlayButton.cs" id="3_05l2w"]
+[ext_resource type="Script" uid="uid://chibh177tk0da" path="res://user_interface/buttons_title/QuitTitle.cs" id="3_ig5kc"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -27,17 +33,25 @@ size_flags_vertical = 4
 
 [node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "TITLE SCREEN"
+theme_type_variation = &"RichTextLabelTitle"
+bbcode_enabled = true
+text = "[wave][pulse freq=0.4]Dungeon Killer"
 fit_content = true
 autowrap_mode = 0
 
 [node name="PlayButton" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_v6p8y")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_05l2w")
 
 [node name="OptionsButton" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_v6p8y")]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Options"
 
 [node name="QuitButton" parent="PanelContainer/VBoxContainer" instance=ExtResource("1_v6p8y")]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Quit"
+script = ExtResource("3_ig5kc")

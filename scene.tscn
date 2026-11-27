@@ -1,6 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cd83hpihq2w6g"]
 
 [ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://map.jpg" id="1_ulcgi"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cs2700ciuk3i8" path="res://Player.tscn" id="3_3253y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nxogm"]
@@ -22,6 +23,9 @@ size = Vector2(321, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ni31j"]
 size = Vector2(70, 197)
+=======
+[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
+>>>>>>> 483a60e (Interactive Quit/Play)
 
 [node name="Scene" type="Node2D"]
 position = Vector2(-27, 85)
