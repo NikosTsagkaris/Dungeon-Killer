@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd83hpihq2w6g"]
 
 [ext_resource type="Texture2D" uid="uid://baect3lcbq3ok" path="res://map.jpg" id="1_ulcgi"]
-[ext_resource type="PackedScene" path="res://Player.tscn" id="3_3253y"]
+[ext_resource type="PackedScene" uid="uid://ekqcpe15qoms" path="res://Player.tscn" id="3_3253y"]
 
 [node name="Scene" type="Node2D"]
 
